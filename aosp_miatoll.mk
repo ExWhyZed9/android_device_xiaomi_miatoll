@@ -15,13 +15,13 @@
 # Inherit from miatoll  device
 $(call inherit-product, device/xiaomi/miatoll/device.mk)
 
-# Inherit some common Cherish stuff
-$(call inherit-product, vendor/cherish/config/common_full_phone.mk)
+# Inherit some common Eternity stuff
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Bootanimation Resolution
 TARGET_BOOT_ANIMATION_RES := 1080
 
-PRODUCT_NAME := cherish_miatoll
+PRODUCT_NAME := aosp_miatoll
 PRODUCT_DEVICE := miatoll
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := SM6250
@@ -29,11 +29,10 @@ PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
-# Inherit some props from Cherish
-CHERISH_VANILLA := true
-CHERISH_BUILD_TYPE := OFFICIAL
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.cherish.maintainer=COSMIC
+# Inherit some props from Eternity
+CUSTOM_BUILD_TYPE := OFFICIAL
+ETERNITY_MAINTAINER := COSMIC
+WITH_GAPPS := true
 
 # Inherit some common device props
 TARGET_SUPPORTS_QUICK_TAP := true
